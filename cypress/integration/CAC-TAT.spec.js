@@ -219,13 +219,13 @@ describe('Central de Atendimento ao Cliente TAT', function () {
 
   it('14 - seleciona um arquivo da pasta fixtures', function () {
     cy.get('#file-upload')
-      .selectFile('C:/Users/Pedro/Desktop/Certificado.png')
+      .selectFile('./Certificado.png')
   })
 
-  it('15 - seleciona um arquivo simulando um drag-and-drop', function () {
+  it.only('15 - seleciona um arquivo simulando um drag-and-drop', function () {
     cy.get('#file-upload')
       .should('not.have.value')
-      .selectFile('C:/Users/Pedro/Desktop/Certificado.png', {action: 'drag-drop'})
+      .selectFile('./Certificado.png', {action: 'drag-drop'})
       .should(function($input) {
         expect($input[0].files[0].name).to.equal('Certificado.png')
       })
