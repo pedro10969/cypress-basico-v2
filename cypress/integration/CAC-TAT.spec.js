@@ -150,8 +150,8 @@ describe('Central de Atendimento ao Cliente TAT', function () {
     cy.fillMandatoryFieldsAndSubmit()
 
     cy.get('#product')
-      .select('Youtube')
-      .should('have.value', 'Youtube')
+      .select('youtube')
+      .should('have.value', 'youtube')
   })
 
   it('8 - seleciona um produto (Mentoria) por seu valor (value)', function () {
@@ -254,7 +254,7 @@ describe('Central de Atendimento ao Cliente TAT', function () {
       .should('be.visible')
       })
   
-  it.only('20 - testa a página da política de privacidade de forma independente ', function () {
+  it('20 - testa a página da política de privacidade de forma independente ', function () {
     cy.get('#privacy a')
       .click()
     })
